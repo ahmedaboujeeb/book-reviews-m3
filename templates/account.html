@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+    <div class="col s12 m8 offset-m2">
+      <div class="card-panel">
+        <div class="card-content black-text center-align">
+          <h3 class="card-title">Welcome, {{ username }}</h3>
+          <p>This is your Online Book Reviews account.</p>
+        </div>
+        <div class="card-action center-align">
+            <span>
+          <a href="#">Add Review</a> |
+          <a href="{{ url_for('index') }}">Go to Reviews</a>
+        </span>
+        </div>
+      </div>
+    </div>
+  </div>
+            
+
+{% endblock %}

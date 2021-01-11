@@ -44,6 +44,8 @@ def signup():
 
         session["user"] = request.form.get("username").lower()
         flash("You are signed up!")
+        return redirect(url_for("account", username=session["user"]))
+
     return render_template("signup.html")
 
 
@@ -58,6 +60,8 @@ def login():
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Logged In!")
+                    return redirect(url_for("account", username=session["user"]))
+
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
@@ -68,6 +72,23 @@ def login():
 
     return render_template("login.html")
 
+
+@app.route("/account/<username>", methods=["GET", "POST"])
+def account(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if session["user"]:
+        return render_template("account.html", username=username)
+
+    return redirect(url_for("login"))
+
+
+@app.route("/logout")
+def logout():
+    flash("Logged Out!")
+    session.pop("user")
+    return redirect(url_for("login"))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
