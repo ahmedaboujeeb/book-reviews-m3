@@ -22,6 +22,11 @@ def index():
     reviews = mongo.db.reviews.find()
     return render_template("index.html", reviews=reviews)
 
+
+@app.route("/signup", methods=["GET", "POST"])
+def signup():
+    return render_template("signup.html")
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
