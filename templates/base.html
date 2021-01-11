@@ -22,7 +22,7 @@
                 <li><a class="black-text" href="{{ url_for('index') }}">Reviews</a></li>
                 {% if session.user %}
                 <li><a class="black-text" href="{{ url_for('account', username=session['user']) }}">Account</a></li>
-                <li><a class="black-text" href="">Add Review</a></li>
+                <li><a class="black-text" href="{{ url_for('add_review') }}">Add Review</a></li>
                 <li><a class="black-text" href="{{ url_for('logout') }}">Log Out</a></li>
                 {% else %}
                 <li><a class="black-text" href="{{ url_for('login') }}">Log In</a></li>
@@ -34,10 +34,9 @@
         
           <ul class="sidenav" id="mobile-demo">
             <li><a class="black-text" href="{{ url_for('index') }}">Reviews</a></li>
-            <li><a class="black-text" href="{{ url_for('index') }}">Reviews</a></li>
             {% if session.user %}
             <li><a class="black-text" href="{{ url_for('account', username=session['user']) }}">Account</a></li>
-            <li><a class="black-text" href="">Add Review</a></li>
+            <li><a class="black-text" href="{{ url_for('add_review') }}">Add Review</a></li>
             <li><a class="black-text" href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
             <li><a class="black-text" href="{{ url_for('login') }}">Log In</a></li>
