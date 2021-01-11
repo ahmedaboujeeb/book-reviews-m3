@@ -4,32 +4,32 @@
 <h3 class="center-align">Add Review</h3>
 
 <div class="row">
-    <form class="col s12" method="POST" action="">
+    <form class="col s12" method="POST" action="{{ url_for('add_review') }}">
         <div class="card-panel">
             <div class="row">
-                <div class="input-field col s12">
-                    <input id="category_name" name="category_name" type="text" minlength="3" maxlength="15" pattern="^[a-zA-Z]{3,15}$" class="validate" required>
+                <div class="input-field col s6 center-align">
+                    <input id="category_name" name="category_name" type="text" minlength="3" maxlength="15" class="validate" required>
                     <label for="category_name">Category</label>
                 </div>
-                <div class="input-field col s12">
-                    <input id="book_name" name="book_name" type="text" minlength="3" maxlength="15" pattern="^[a-zA-Z]{3,15}$" class="validate" required>
+                <div class="input-field col s6">
+                    <input id="book_name" name="book_name" type="text" minlength="3" maxlength="15" class="validate" required>
                     <label for="book_name">Book Name</label>
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s12">
-                    <input id="author_name" type="text" name="author_name" minlength="3" maxlength="15" pattern="^[a-zA-Z0-9]{3,15}$" class="validate" required>
+                <div class="input-field col s6">
+                    <input id="author_name" type="text" name="author_name" minlength="3" maxlength="15" class="validate" required>
                     <label for="author_name">Author Name</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="review" type="text" name="review" minlength="3" maxlength="15" pattern="^[a-zA-Z0-9]{3,15}$" class="validate" required>
+                    <input id="review" type="text" name="review" minlength="3" maxlength="200" class="validate" required>
                     <label for="review">Reveiw</label>
                 </div>
             </div>
             <div class="row">
-                <button class="btn waves-effect waves-light grey darken-3 col s12" type="submit" name="action">
+                <button class="btn waves-effect waves-light grey darken-3 col s12" type="submit">
                     Add
                   </button>
             </div>

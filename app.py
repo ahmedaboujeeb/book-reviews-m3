@@ -93,6 +93,17 @@ def logout():
 
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
+    if request.method == "POST":
+        review = {
+            "category_name": request.form.get("category_name"),
+            "book_name": request.form.get("book_name"),
+            "author_name": request.form.get("author_name"),
+            "review": request.form.get("review"),
+        }
+        mongo.db.reviews.insert_one(review)
+        flash("Review Successfully Added")
+        return redirect(url_for("add_review"))
+
     return render_template("add_review.html")
 
 if __name__ == "__main__":
