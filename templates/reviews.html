@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+    <h1>Reviews</h1>
+    {% for review in reviews %}
+    {{ review.category_name }}<br>
+    {{ review.book_name }}<br>
+    {{ review.author }}<br>
+    {{ review.review }}<br>
+    {% endfor %}
+
+{% endblock %}

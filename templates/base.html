@@ -16,10 +16,11 @@
     <header>
         <nav class="grey lighten-2">
             <div class="nav-wrapper">
-              <a href="{{ url_for('index') }}" class="brand-logo black-text" style="padding-left: 1rem;">Book Reviews</a>
+              <a href="{{ url_for('index') }}" class="brand-logo black-text">Book Reviews</a>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
               <ul class="right hide-on-med-and-down">
-                <li><a class="black-text" href="{{ url_for('index') }}">Reviews</a></li>
+                <li><a class="black-text" href="{{ url_for('index') }}">Home</a></li>
+                <li><a class="black-text" href="{{ url_for('reviews') }}">Reviews</a></li>
                 {% if session.user %}
                 <li><a class="black-text" href="{{ url_for('account', username=session['user']) }}">Account</a></li>
                 <li><a class="black-text" href="{{ url_for('add_review') }}">Add Review</a></li>
@@ -33,7 +34,8 @@
           </nav>
         
           <ul class="sidenav" id="mobile-demo">
-            <li><a class="black-text" href="{{ url_for('index') }}">Reviews</a></li>
+            <li><a class="black-text" href="{{ url_for('index') }}">Home</a></li>
+            <li><a class="black-text" href="{{ url_for('reviews') }}">Reviews</a></li>
             {% if session.user %}
             <li><a class="black-text" href="{{ url_for('account', username=session['user']) }}">Account</a></li>
             <li><a class="black-text" href="{{ url_for('add_review') }}">Add Review</a></li>

@@ -6,7 +6,7 @@ header {
     background: url("../images/hero-image.jpg") no-repeat;
     position: relative;
     background-size: cover;
-    height: 60vh;
+    height: 70vh;
     width: 100%;
     left: 0;
     top: 0;
@@ -18,5 +18,5 @@ header {
     -moz-background-size: cover;
     -webkit-background-size: cover;
     z-index: 1;
-    background-position: 30% 100%;
+    background-position: 50% 80%;
 }
