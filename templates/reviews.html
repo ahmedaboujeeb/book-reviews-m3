@@ -13,8 +13,7 @@
         </div>
         <div class="card-content">
             <span class="card-title">{{ review.book_name }}</span>
-          <a href="{{ url_for('review_page', review_id=review._id) }}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="fas fa-link"></i></a>
-          <p>{{ review.review }}</p>
+          <a title="Go to Review Page" href="{{ url_for('review_page', review_id=review._id) }}" class="btn waves-effect waves-light grey darken-3">Read Review</a>
         </div>
       </div>
       {% endfor %}

@@ -100,11 +100,12 @@ def logout():
 def add_review():
     if request.method == "POST":
         review = {
-            "category_name": request.form.get("category_name"),
+            "genre": request.form.get("genre"),
             "book_name": request.form.get("book_name"),
             "author_name": request.form.get("author_name"),
             "image_link": request.form.get("image_link"),
             "review": request.form.get("review"),
+            "review_by": session["user"]
         }
         mongo.db.reviews.insert_one(review)
         flash("Review Successfully Added")
@@ -117,6 +118,24 @@ def add_review():
 def review_page(review_id):
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     return render_template("review_page.html", review=review)
+
+
+@app.route("/edit_review/<review_id>", methods=["GET", "POST"])
+def edit_review(review_id):
+    if request.method == "POST":
+        submit = {
+            "genre": request.form.get("genre"),
+            "book_name": request.form.get("book_name"),
+            "author_name": request.form.get("author_name"),
+            "image_link": request.form.get("image_link"),
+            "review": request.form.get("review"),
+            "review_by": session["user"]
+        }
+        mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
+        flash("Review Updated")
+
+    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    return render_template("edit_review.html", review=review)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
