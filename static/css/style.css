@@ -21,6 +21,12 @@ header {
     background-position: 50% 80%;
 }
 
-.row {
-    margin: 0rem;
+.book-image {
+    width: 50%;
+    position: relative;
+    justify-content: center;
+    display: block;
+    left: 0;
+    top: 0;
+    margin: 0 auto;
 }

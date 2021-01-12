@@ -112,6 +112,12 @@ def add_review():
 
     return render_template("add_review.html")
 
+
+@app.route("/review_page/<review_id>")
+def review_page(review_id):
+    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    return render_template("review_page.html", review=review)
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
