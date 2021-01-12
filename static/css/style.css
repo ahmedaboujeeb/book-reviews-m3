@@ -20,3 +20,7 @@ header {
     z-index: 1;
     background-position: 50% 80%;
 }
+
+.row {
+    margin: 0rem;
+}

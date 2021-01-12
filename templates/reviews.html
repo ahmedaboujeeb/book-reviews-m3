@@ -3,11 +3,24 @@
 
 
     <h1>Reviews</h1>
-    {% for review in reviews %}
-    {{ review.category_name }}<br>
-    {{ review.book_name }}<br>
-    {{ review.author }}<br>
-    {{ review.review }}<br>
-    {% endfor %}
+<div class="container">
+    <div class="row">
+    <div class="col s12 m6">
+        {% for review in reviews %}
+      <div class="card">
+        <div class="card-image">
+          <img src="{{ review.image_link }}">
+        </div>
+        <div class="card-content">
+            <span class="card-title">{{ review.book_name }}</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="fas fa-link"></i></a>
+          <p>{{ review.review }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+            
 
 {% endblock %}

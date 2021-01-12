@@ -103,6 +103,7 @@ def add_review():
             "category_name": request.form.get("category_name"),
             "book_name": request.form.get("book_name"),
             "author_name": request.form.get("author_name"),
+            "image_link": request.form.get("image_link"),
             "review": request.form.get("review"),
         }
         mongo.db.reviews.insert_one(review)
