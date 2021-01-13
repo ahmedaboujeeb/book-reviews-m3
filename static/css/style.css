@@ -30,3 +30,13 @@ header {
     top: 0;
     margin: 0 auto;
 }
+
+.social-icons a i{
+    padding: 1rem 1rem;
+    text-align: center;
+    color: gray;
+}
+
+.social-icons a i:hover {
+    color: black;
+}
