@@ -2,22 +2,41 @@
 {% block content %}
 
 
-    <h1>Reviews</h1>
+<h1>Reviews</h1>
+
+<div class="row">
+  <form class="col s12" action="{{ url_for('search') }}" method="POST">
     <div class="row">
-    <div class="col s12 m4 offset-m4">
-        {% for review in reviews %}
-      <div class="card">
-        <div class="card-image">
-          <img src="{{ review.image_link }}">
-        </div>
-        <div class="card-content">
-            <span class="card-title">{{ review.book_name }}</span>
-          <a title="Go to Review Page" href="{{ url_for('review_page', review_id=review._id) }}" class="btn waves-effect waves-light grey darken-3">Read Review</a>
-        </div>
+      <div class="input-field col s12">
+        <input id="query" name="query" type="text" minlength="3" data-length="10" class="validate" required>
+        <label for="query">Search</label>
       </div>
-      {% endfor %}
+      <div class="social-icons">
+        <button class="btn waves-effect waves-light grey darken-3" type="submit">
+          <i class="fas fa-search"></i> Search
+        </button>
+        <a href="{{ url_for('reviews') }}" title="Back to Reviews"><i class="fas fa-undo small"></i></a>
+      </div>
+  </form>
+</div>
+
+
+<div class="row">
+  {% for review in reviews %}
+  <div class="col s12 m4 l3">
+    <div class="card">
+      <div class="card-image">
+        <img src="{{ review.image_link }}">
+      </div>
+      <div class="card-content">
+        <span class="card-title">{{ review.book_name }}</span>
+        <a title="Go to Review Page" href="{{ url_for('review_page', review_id=review._id) }}"
+          class="btn waves-effect waves-light grey darken-3">Read Review</a>
+      </div>
     </div>
   </div>
-            
+  {% endfor %}
+</div>
+
 
 {% endblock %}

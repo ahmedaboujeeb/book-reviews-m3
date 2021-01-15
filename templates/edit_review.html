@@ -8,36 +8,42 @@
         <div class="card-panel">
             <div class="row">
                 <div class="input-field col s6 center-align">
-                    <input id="genre" name="genre" type="text" value="{{ review.genre }}" minlength="3" maxlength="15" class="validate" required>
+                    <input id="genre" name="genre" type="text" value="{{ review.genre }}" minlength="3" maxlength="15"
+                        class="validate" required>
                     <label for="genre">Genre</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="book_name" name="book_name" type="text" value="{{ review.book_name }}" minlength="3" maxlength="100" class="validate" required>
+                    <input id="book_name" name="book_name" type="text" value="{{ review.book_name }}" minlength="3"
+                        maxlength="100" class="validate" required>
                     <label for="book_name">Book Name</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="author_name" type="text" name="author_name" value="{{ review.author_name }}" minlength="3" maxlength="15" class="validate" required>
+                    <input id="author_name" type="text" name="author_name" value="{{ review.author_name }}"
+                        minlength="3" maxlength="15" class="validate" required>
                     <label for="author_name">Author</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="image_link" type="url" name="image_link" value="{{ review.image_link }}" minlength="3" maxlength="200" class="validate" required>
+                    <input id="image_link" type="url" name="image_link" value="{{ review.image_link }}" minlength="3"
+                        maxlength="200" class="validate" required>
                     <label for="image_link">Link to Book Cover</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="review" type="text" name="review" value="{{ review.review }}" minlength="3" maxlength="200" class="validate" required>
+                    <input id="review" type="text" name="review" value="{{ review.review }}" minlength="3"
+                        maxlength="200" class="validate" required>
                     <label for="review">Reveiw</label>
                 </div>
             </div>
             <div class="row social-icons">
                 <button class="btn waves-effect waves-light grey darken-3 col s12 m10 offset-m1" type="submit">
                     Update
-                  </button>
-                    <a title="Cancel" href="{{ url_for('review_page', review_id=review._id) }}"> <i class="fas fa-undo offset-m4"></i>
-                    </a>
+                </button>
+                <a title="Cancel" href="{{ url_for('review_page', review_id=review._id) }}"> <i
+                        class="fas fa-undo offset-m4"></i>
+                </a>
             </div>
         </div>
     </form>
