@@ -2,16 +2,16 @@
 {% block content %}
 
 
-<h1>Reviews</h1>
+<h2 class="center-align">Reviews</h2>
 
 <div class="row">
   <form class="col s12" action="{{ url_for('search') }}" method="POST">
     <div class="row">
-      <div class="input-field col s12">
+      <div class="input-field col s12 m8 offset-m1">
         <input id="query" name="query" type="text" minlength="3" data-length="10" class="validate" required>
         <label for="query">Search</label>
       </div>
-      <div class="social-icons">
+      <div class="social-icons s12 m4">
         <button class="btn waves-effect waves-light grey darken-3" type="submit">
           <i class="fas fa-search"></i> Search
         </button>
