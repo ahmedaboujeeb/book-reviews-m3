@@ -3,15 +3,14 @@
 
 <div class="row">
     <div class="col s12 m8 offset-m2">
-        <h2>{{ review.book_name }}</h2>
-    
-    <div>
+        <h2 class="padding">{{ review.book_name }}</h2>
+    <div class="padding">
         <img class="book-image" src="{{ review.image_link }}">
     </div>
-    <div>
+    <div class="padding">
         <p><b>Genre:</b> {{ review.genre }} </p>
        <p><b>Author:</b> {{ review.author_name }} </p>
-       <p><b>Review:</b> {{ review.review}} </p>
+       <p><b>Review:</b><br> {{ review.review}} </p>
        <p><b>Created by User:</b> {{ review.review_by}} </p> 
 
     </div>

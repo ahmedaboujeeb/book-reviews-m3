@@ -4,6 +4,7 @@ flash, redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from functools import wraps
 if os.path.exists("env.py"):
     import env
 
@@ -15,6 +16,15 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+
+
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if "user" in session and session ["user"] is not None:
+            return f(*args, **kwargs)
+        return redirect(url_for('login', next=request.url))
+    return decorated_function
 
 
 @app.route("/")
@@ -87,6 +97,7 @@ def login():
 
 
 @app.route("/account/<username>", methods=["GET", "POST"])
+@login_required
 def account(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -105,6 +116,7 @@ def logout():
 
 
 @app.route("/add_review", methods=["GET", "POST"])
+@login_required
 def add_review():
     if request.method == "POST":
         review = {
@@ -129,6 +141,7 @@ def review_page(review_id):
 
 
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
+@login_required
 def edit_review(review_id):
     if request.method == "POST":
         submit = {
@@ -147,6 +160,7 @@ def edit_review(review_id):
 
 
 @app.route("/delete_review/<review_id>")
+@login_required
 def delete_review(review_id):
     mongo.db.reviews.remove({"_id": ObjectId(review_id)})
     flash("Review Successfully Deleted")

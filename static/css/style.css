@@ -50,3 +50,12 @@ header {
 .social-icons a i:hover {
     color: black;
 }
+
+.card {
+    text-align: center;
+    height: 43rem;
+}
+
+.padding {
+    padding-bottom: 5rem;
+}

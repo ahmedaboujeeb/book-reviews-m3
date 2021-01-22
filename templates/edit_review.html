@@ -14,7 +14,7 @@
                 </div>
                 <div class="input-field col s6">
                     <input id="book_name" name="book_name" type="text" value="{{ review.book_name }}" minlength="3"
-                        maxlength="100" class="validate" required>
+                        maxlength="20" class="validate" required>
                     <label for="book_name">Book Name</label>
                 </div>
             </div>
@@ -26,14 +26,14 @@
                 </div>
                 <div class="input-field col s6">
                     <input id="image_link" type="url" name="image_link" value="{{ review.image_link }}" minlength="3"
-                        maxlength="200" class="validate" required>
+                         class="validate" required>
                     <label for="image_link">Link to Book Cover</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <input id="review" type="text" name="review" value="{{ review.review }}" minlength="3"
-                        maxlength="200" class="validate" required>
+                        maxlength="400" class="validate" required>
                     <label for="review">Reveiw</label>
                 </div>
             </div>

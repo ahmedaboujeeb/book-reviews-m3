@@ -2,7 +2,7 @@
 {% block content %}
 
 
-<h2 class="center-align">Reviews</h2>
+<h2 class="center-align padding">Reviews</h2>
 
 <div class="row">
   <form class="col s12" action="{{ url_for('search') }}" method="POST">
@@ -11,7 +11,7 @@
         <input id="query" name="query" type="text" minlength="3" data-length="10" class="validate" required>
         <label for="query">Search</label>
       </div>
-      <div class="social-icons s12 m4">
+      <div class="social-icons s8 m4">
         <button class="btn waves-effect waves-light grey darken-3" type="submit">
           <i class="fas fa-search"></i> Search
         </button>
@@ -20,23 +20,23 @@
   </form>
 </div>
 
-
 <div class="row">
   {% for review in reviews %}
   <div class="col s12 m4 l3">
     <div class="card">
-      <div class="card-image">
-        <img src="{{ review.image_link }}">
+      <div class="card-header card-image waves-effect waves-block waves-light">
+        <img src="{{ review.image_link }}" class="img-rounded activator resizeimg" height="470">
       </div>
       <div class="card-content">
         <span class="card-title">{{ review.book_name }}</span>
-        <a title="Go to Review Page" href="{{ url_for('review_page', review_id=review._id) }}"
-          class="btn waves-effect waves-light grey darken-3">Read Review</a>
+        <div class="card-action">
+          <a title="Go to Review Page" href="{{ url_for('review_page', review_id=review._id) }}"
+            class="btn waves-effect waves-light grey darken-3">Read Review</a>
+        </div>
       </div>
     </div>
   </div>
   {% endfor %}
 </div>
-
 
 {% endblock %}
