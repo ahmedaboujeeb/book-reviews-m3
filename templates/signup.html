@@ -4,14 +4,14 @@
 <h3 class="center-align">Sign Up!</h3>
 
 <div class="row">
-    <form class="col s12" method="POST" action="{{ url_for('signup') }}">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('signup') }}">
         <div class="card-panel">
             <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s12">
                     <input id="first_name" name="first_name" type="text" minlength="3" maxlength="15" pattern="^[a-zA-Z]{3,15}$" class="validate" required>
                     <label for="first_name">First Name</label>
                 </div>
-                <div class="input-field col s6">
+                <div class="input-field col s12">
                     <input id="last_name" name="last_name" type="text" minlength="3" maxlength="15" pattern="^[a-zA-Z]{3,15}$" class="validate" required>
                     <label for="last_name">Last Name</label>
                 </div>
