@@ -1,18 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!--   Home page   -->
+<div class="hero-image">
 
-   
-
+</div>
+    
     <div class="container">
         <div class="row col s12">
-            <h2 class="center-align">Welcome to Book Reviews</h2>
-            <p>
-                Book Reviews is a website where users share thier reviews, and what they think about books they've read. Guest users are also welecome
+            <h2 class="center-align padding">Welcome to Book Reviews</h2>
+            <p class="padding">
+                Book Reviews is a website where users share, edit and delete thier reviews, and what they think about books they've read. Guest users are also welecome
                 to read review added by the website users.
             </p>
-
         </div>
+
+        {% if session.user %}
+        <div class="card-action center-align">
+            <span>
+          <a href="{{ url_for('add_review') }}">Add Review</a> |
+          <a href="{{ url_for('reviews') }}">Go to Reviews</a>
+        </span>
+        </div>
+        {% else %}
+        <!--   Links to login and signup   -->
+        <div class="card-action center-align padding">
+            <span>
+          <a href="{{ url_for('login') }}">Login</a> |
+          <a href="{{ url_for('signup') }}">Sign Up</a>
+        </span>
+        </div>
+        {% endif %}
     </div>
     
 

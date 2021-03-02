@@ -15,7 +15,7 @@
 
     </div>
     <div class="row">
-    <div class="col s6 m4 offset-m4 social-icons">
+    <div class="col s8 m4 offset-m4 offset-s2 social-icons">
     <a href="{{ url_for('reviews') }}" title="Back to Reviews"><i class="fas fa-arrow-circle-left small"></i></a>
     {% if session.user|lower == review.review_by|lower %}
     <a href="{{ url_for('edit_review', review_id=review._id) }}" title="Edit Review"><i class="far fa-edit small"></i></a>
