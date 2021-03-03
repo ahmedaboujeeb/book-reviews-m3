@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-
+ <!--   header   -->
 <h3 class="center-align">Sign Up!</h3>
-
+ <!--   Sign up form   -->
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('signup') }}">
         <div class="card-panel">
@@ -24,10 +24,11 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="password" type="password" name="password" minlength="3" maxlength="15" pattern="^[a-zA-Z0-9]{3,15}$" class="validate" required>
+                    <input id="password" type="password" name="password" minlength="6" maxlength="15" pattern="^[a-zA-Z0-9]{6,15}$" class="validate" required>
                     <label for="password">Password</label>
                 </div>
             </div>
+             <!--   Sign up button   -->
             <div class="row">
                 <button class="btn waves-effect waves-light grey darken-3 col s12" type="submit" name="action">
                     Submit

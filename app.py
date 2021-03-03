@@ -7,7 +7,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 if os.path.exists("env.py"):
     import env
-
+# Required libraries imported
 
 app = Flask(__name__)
 
@@ -17,7 +17,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
+# Login required security feature
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
@@ -26,13 +26,13 @@ def login_required(f):
         return redirect(url_for('login', next=request.url))
     return decorated_function
 
-
+# Route to home page
 @app.route("/")
 @app.route("/index")
 def index():
     return render_template("index.html")
 
-
+# Route to reviews page
 @app.route("/reviews")
 def reviews():
     reviews = mongo.db.reviews.find()
@@ -169,4 +169,4 @@ def delete_review(review_id):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)

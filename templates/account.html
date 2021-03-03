@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!--  Welcome card  -->
 <div class="row">
     <div class="col s12 m8 offset-m2">
       <div class="card-panel">
@@ -10,6 +11,7 @@
         </div>
         <div class="card-action center-align">
             <span>
+              <!--  Redirection links  -->
           <a href="{{ url_for('add_review') }}">Add Review</a> |
           <a href="{{ url_for('reviews') }}">Go to Reviews</a>
         </span>

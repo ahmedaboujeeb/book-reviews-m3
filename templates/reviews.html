@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-
+ <!--   Header   -->
 <h2 class="center-align padding">Reviews</h2>
-
+ <!--   Search box   -->
 <div class="row">
   <form class="col s12" action="{{ url_for('search') }}" method="POST">
     <div class="row">
@@ -11,6 +11,7 @@
         <input id="query" name="query" type="text" minlength="3" data-length="10" class="validate" required>
         <label for="query">Search</label>
       </div>
+       <!--   search and back buttons   -->
       <div class="social-icons col s8 m3 offset-s4">
         <button class="btn waves-effect waves-light grey darken-3" type="submit">
           <i class="fas fa-search"></i> Search
@@ -19,7 +20,7 @@
       </div>
   </form>
 </div>
-
+ <!--   book review cards   -->
 <div class="row">
   {% for review in reviews %}
   <div class="col s12 m4 l3">

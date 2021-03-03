@@ -6,18 +6,19 @@ Book Reviews is a website where users share thier reviews and what they think ab
 
 ## UX
 
+[Link to website structure](https://github.com/ahmedaboujeeb/book-reviews-m3/tree/main/screenshots)
 
 ### User Story
 
 #### As a user
 
-- Share you reviews on books you've read with other users.
-- Read other users' reviews.
-- Search for book reviews by genre, book name, author or review. 
-- Create a private account.
-- Log in and log out of your account.
-- Add reviews by adding the book name, the name of the author, a link to the book cover image and your review.
-- Edit or delete your reviews.
+- Share you reviews on books you've read with other users
+- Read other users' reviews
+- Search for book reviews by genre, book name, author or review.
+- Create a private account
+- Log in and log out of your account
+- Add reviews by adding the book name, the name of the author, a link to the book cover image and your review
+- Edit or delete your reviews
 
 
 ## Features
@@ -35,15 +36,11 @@ Book Reviews is a website where users share thier reviews and what they think ab
 
 ## Technologies Used
 
-- HTML, CSS: used for the main website structure and styling.
-- JavaScript: Jquery for collapsable navbar.
-- Visual Studio Code: this whole project is done using VS Code.
-- Font Awesome: social media icons were taken from fontawesome.com.
-- GitHub: used to deploy and host this project.
-- Heroku: used to deploy and host this project.
-- Flask: 
-- Materialize: the website theme is taken from materializecss.com as well as other features.
-
+Programming languages: HTML, CSS, JavaScript, Python
+Frameworks: Flask, Jquery
+Database: MongoDB
+Code editor: Visual Studio Code
+Version control: GitHub, Heroku
 
 ## Testing
 
@@ -55,6 +52,7 @@ Book Reviews is a website where users share thier reviews and what they think ab
 ### Review page
 
 #### Search functionality
+
 - Click on search field
 - Type in text and/or numbers in search field
 - Click enter shows results
@@ -66,53 +64,51 @@ Book Reviews is a website where users share thier reviews and what they think ab
 
 #### Review card
 
-- Click on 'Read Review' button directs to the review page
+- Click on 'Read Review' button redirects to the review page
 
 ### Signup page
 
-- If First name field left empty it will be underlined in red
-- If Last name field left empty it will be underlined in red
-- If User name field left empty it will be underlined in red
-- If Password field left empty it will be underlined in red
-- Click submit with First name field empty, will show message "Please fill out this filed" with no action
-- Click submit with Last name field empty, will show message "Please fill out this filed" with no action
-- Click submit with User name field empty, will show message "Please fill out this filed" with no action
-- Click submit with Pssword field empty, will show message "Please fill out this filed" with no action
+- All fields are required, if one or more fields left empty it will be underlined in red
+- Click submit with one or more fields empty, warning message shows "please fill our this field"
+- If one or more fields have the wrong format or has less characters than required warning message will show
 - Fill out all fields and click submit redirects you to 'Account' page, message will show "You are signed up!" and data will be stored in data base
 
 ### Account page
 
-- Click on 'Add Review' directs you to 'Add Review' page
-- Click on 'Go to Reviews' directs you to 'Reviews' page
+- Click on 'Add Review' redirects you to 'Add Review' page
+- Click on 'Go to Reviews' redirects you to 'Reviews' page
 
 ### Login page
 
 - If  User Name field left empty it will be underlined in red
 - If Password field left empty it will be underlined in red
-- Click Log in with User Name field empty, will show message "Please fill out this filed" with no action
-- Click Log In with Password field empty, will show message "Please fill out this filed" with no action
+- Click Log in with User Name field empty, warning message shows "Please fill out this filed" 
+- Click Log In with Password field empty, warning message "Please fill out this filed" 
+- If one or more fields have the wrong format or has less characters than required warning message will show
+- If username or password or both are incorrect or not registred "sigend up" error messgage shows "Username/Password incorrect"
 - Fill out all fields and click Log In redirects you to 'Account' page, message will show "Logged In!" and you will be able to add reviews
 
 ### Add review 
 
-- If Genre field left empty it will be underlined in red
-- If Book name field left empty it will be underlined in red
-- If Author field left empty it will be underlined in red
-- If Link to book cover field left empty it will be underlined in red
-- If Review field left empty it will be underlined in red
-- Click Add with Genre or/and Book name or/and Author or/and Link to book cover or/and Review field empty, will show message "Please fill out this filed" and no action
+- All fields are required, if one or more fields left empty it will be underlined in red
+- Click Add with one or more fields empty, warning message shows "please fill out this field"
+- If one or more fields have the wrong format or has less characters than required warning message will show
 - Fill out all fields and click Add button will add review 
 
 
-### Edit review form
+### Edit review 
 
-- If Genre field left empty it will be underlined in red
-- If Book name field left empty it will be underlined in red
-- If Author field left empty it will be underlined in red
-- If Link to book cover field left empty it will be underlined in red
-- If Review field left empty it will be underlined in red
-- Click Add with Genre or/and Book name or/and Author or/and Link to book cover or/and Review field empty, will show message "Please fill out this filed" and no action
-- Fill out all fields and click Add button will add review 
+- All fields are required, if one or more fields left empty it will be underlined in red
+- Click Update with one or more fields empty, warning message shows "please fill out this field"
+- If one or more fields have the wrong format or has less characters than required warning message will show
+- Fill out all fields and click Update button will add review 
+- Click on Back "Cancel" button redirects to review page
+
+### Review page
+
+- Click on back to reviews redirects you to reviews page
+- Click on edit button redirects you to edit page
+- Click on delete button, confirmation message pops up. Click "Ok" delets review, click "Cancel" cancels request
 
 ### Responsiveness
 
@@ -146,14 +142,13 @@ The website was tested using Google Chrome developer tools, and is responsive on
 
 ### Programming languages validation
 
-
-### Bugs
-
-
+- validator.w3.org
+- CSS passed jigsaw.w3.org validator with no errors
+- Python code is consistent in style and conforms to the PEP8 style guide.
 
 ## Deployment
 
-### Deployed version
+### Local deployment
 
 1. On GitHub, go to repository's main page [link](https://github.com/ahmedaboujeeb/book-reviews-m3)
 2. Above the list of files, click Code
@@ -162,9 +157,32 @@ The website was tested using Google Chrome developer tools, and is responsive on
 5. Type "git clone" and then paste the URL https://github.com/ahmedaboujeeb/book-reviews-m3.git
 6. Press Enter to create your local clone
 
-### Developmment version
+### Heroku deployment
 
-
+1. Log in to your Heroku account
+2. Create a new app
+3. In Setting go to Reveal config vars
+4. Set the following variables:
+  - IP = 0.0.0.0
+  - MONGO_DBNAME = {Your MongoDB name}
+  - MONGO_URI = {Your MongoDB URI}
+  - SECRET_KEY = {Your secret key}
+  - PORT = 5000
+5. On your code editor create requirements.txt 
+6. Creat a Procfile
+7. Push changes to Git
+8. Log in to Heroku from your terminal 
+9. Add existing repsitories to Heroku 
+10. Push changes to Heroku
 
 ## Credits
+
+This project was inspired by Code Institute 
+
+### Media
+
+- Hero image was taken from pexels.com
+- Social media Icons were taken from fontawesome.com and materializecss.com
+- Theme was taken from materializecss.com
+- Fonts taken from fonts.google.com
 
