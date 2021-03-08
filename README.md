@@ -6,7 +6,9 @@ Book Reviews is a website where users share thier reviews and what they think ab
 
 ## UX
 
-[Link to website structure](https://github.com/ahmedaboujeeb/book-reviews-m3/tree/main/screenshots)
+Home page 
+
+![Home page screenshot](https://github.com/ahmedaboujeeb/book-reviews-m3/blob/main/static/images/web-structure/Screen%20Shot%202021-03-02%20at%2016.21.23.png)
 
 ### User Story
 
