@@ -25,7 +25,7 @@
   {% for review in reviews %}
   <div class="col s12 m4 l3">
     <div class="card">
-      <div class="card-image">
+      <div class="card-image waves-effect waves-block waves-light">
         <a href="{{ url_for('review_page', review_id=review._id) }}">
         <img src="{{ review.image_link }}" class="img-rounded resizeimg" height="470">
       </a>

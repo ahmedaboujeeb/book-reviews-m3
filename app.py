@@ -9,6 +9,7 @@ if os.path.exists("env.py"):
     import env
 # Required libraries imported
 
+
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -16,6 +17,7 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+
 
 # Login required security feature
 def login_required(f):
@@ -25,6 +27,7 @@ def login_required(f):
             return f(*args, **kwargs)
         return redirect(url_for('login', next=request.url))
     return decorated_function
+
 
 # Route to home page
 @app.route("/")
@@ -39,6 +42,7 @@ def reviews():
     return render_template("reviews.html", reviews=reviews)
 
 
+# Search functionality
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -46,13 +50,14 @@ def search():
     return render_template("reviews.html", reviews=reviews)
 
 
-
+# Sign up functionality
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
              {"username": request.form.get("username").lower()})
 
+        # if user already exists show warning msg
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("signup"))
@@ -72,12 +77,14 @@ def signup():
     return render_template("signup.html")
 
 
+# Login functionality
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
+        # Confirm password/username match user input
         if existing_user:
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
@@ -96,6 +103,7 @@ def login():
     return render_template("login.html")
 
 
+# Account page
 @app.route("/account/<username>", methods=["GET", "POST"])
 @login_required
 def account(username):
@@ -108,6 +116,7 @@ def account(username):
     return redirect(url_for("login"))
 
 
+# Log out functionality
 @app.route("/logout")
 def logout():
     flash("Logged Out!")
@@ -115,6 +124,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+# Add review functionality
 @app.route("/add_review", methods=["GET", "POST"])
 @login_required
 def add_review():
@@ -134,12 +144,14 @@ def add_review():
     return render_template("add_review.html")
 
 
+# Review page
 @app.route("/review_page/<review_id>")
 def review_page(review_id):
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     return render_template("review_page.html", review=review)
 
 
+# Edit review functionality
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 @login_required
 def edit_review(review_id):
@@ -159,6 +171,7 @@ def edit_review(review_id):
     return render_template("edit_review.html", review=review)
 
 
+# Delete review functionality
 @app.route("/delete_review/<review_id>")
 @login_required
 def delete_review(review_id):

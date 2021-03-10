@@ -4,11 +4,11 @@
 
 Book Reviews is a website where users share thier reviews and what they think about books they've read. 
 
+![Book reviews homepage](https://github.com/ahmedaboujeeb/book-reviews-m3/blob/main/screenshots/web/Screen%20Shot%202021-03-02%20at%2016.21.23.png)
+
 ## UX
 
-Home page 
-
-![Home page screenshot](https://github.com/ahmedaboujeeb/book-reviews-m3/blob/main/static/images/web-structure/Screen%20Shot%202021-03-02%20at%2016.21.23.png)
+[Link to screenshots](https://github.com/ahmedaboujeeb/book-reviews-m3/tree/main/screenshots)
 
 ### User Story
 
@@ -22,6 +22,7 @@ Home page
 - Add reviews by adding the book name, the name of the author, a link to the book cover image and your review
 - Edit or delete your reviews
 
+![Reviews page](https://github.com/ahmedaboujeeb/book-reviews-m3/blob/main/screenshots/web/Screen%20Shot%202021-03-08%20at%2010.45.22.png)
 
 ## Features
 
@@ -38,11 +39,11 @@ Home page
 
 ## Technologies Used
 
-Programming languages: HTML, CSS, JavaScript, Python
-Frameworks: Flask, Jquery
-Database: MongoDB
-Code editor: Visual Studio Code
-Version control: GitHub, Heroku
+- Programming languages: HTML, CSS, JavaScript, Python
+- Frameworks: Flask, Jquery
+- Database: MongoDB
+- Code editor: Visual Studio Code
+- Version control: GitHub, Heroku
 
 ## Testing
 
@@ -75,6 +76,8 @@ Version control: GitHub, Heroku
 - If one or more fields have the wrong format or has less characters than required warning message will show
 - Fill out all fields and click submit redirects you to 'Account' page, message will show "You are signed up!" and data will be stored in data base
 
+![Sign up page](https://github.com/ahmedaboujeeb/book-reviews-m3/blob/main/screenshots/web/Screen%20Shot%202021-03-02%20at%2016.06.17.png)
+
 ### Account page
 
 - Click on 'Add Review' redirects you to 'Add Review' page
@@ -97,6 +100,7 @@ Version control: GitHub, Heroku
 - If one or more fields have the wrong format or has less characters than required warning message will show
 - Fill out all fields and click Add button will add review 
 
+![Add review](https://github.com/ahmedaboujeeb/book-reviews-m3/blob/main/screenshots/web/Screen%20Shot%202021-03-02%20at%2016.05.47.png)
 
 ### Edit review 
 
@@ -127,6 +131,8 @@ The website was tested using Google Chrome developer tools, and is responsive on
  - iPad
  - iPad Pro
  - Surface Dou
+
+ ![review page mob](https://github.com/ahmedaboujeeb/book-reviews-m3/blob/main/screenshots/mob/0.0.0.0_5000_review_page_600036aa89085ba49b81bc41(iPhone%20X).png)
 
  The webiste was tested on the following browsers:
  - Google Chrome
