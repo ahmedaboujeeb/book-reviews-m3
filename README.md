@@ -132,8 +132,6 @@ The website was tested using Google Chrome developer tools, and is responsive on
  - iPad Pro
  - Surface Dou
 
- ![review page mob](https://github.com/ahmedaboujeeb/book-reviews-m3/blob/main/screenshots/mob/0.0.0.0_5000_review_page_600036aa89085ba49b81bc41(iPhone%20X).png)
-
  The webiste was tested on the following browsers:
  - Google Chrome
  - Safari
