@@ -8,7 +8,7 @@ Book Reviews is a website where users share thier reviews and what they think ab
 
 ## UX
 
-[Link to screenshots](https://github.com/ahmedaboujeeb/book-reviews-m3/tree/main/screenshots)
+[Link to screenshots](https://github.com/ahmedaboujeeb/book-reviews-m3/blob/main/screenshots/webstructr.md)
 
 ### User Story
 
